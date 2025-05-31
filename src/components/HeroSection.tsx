@@ -2,12 +2,44 @@
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 import './LedgerBook.css';
+import './TextAnimations.css';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [showPrecision, setShowPrecision] = useState(false);
+  const [showInsight, setShowInsight] = useState(false);
+  const [showIntegrity, setShowIntegrity] = useState(false);
+  const [animationsComplete, setAnimationsComplete] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
+
+    // Precision animation starts at 0.5s
+    const precisionTimer = setTimeout(() => {
+      setShowPrecision(true);
+    }, 500);
+
+    // Insight animation starts at 1.8s
+    const insightTimer = setTimeout(() => {
+      setShowInsight(true);
+    }, 1800);
+
+    // Integrity animation starts at 3.2s
+    const integrityTimer = setTimeout(() => {
+      setShowIntegrity(true);
+    }, 3200);
+
+    // All animations complete at 4.5s
+    const completeTimer = setTimeout(() => {
+      setAnimationsComplete(true);
+    }, 4500);
+
+    return () => {
+      clearTimeout(precisionTimer);
+      clearTimeout(insightTimer);
+      clearTimeout(integrityTimer);
+      clearTimeout(completeTimer);
+    };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -40,9 +72,51 @@ const HeroSection = () => {
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <h1 className="font-montserrat font-bold text-5xl md:text-7xl text-white mb-6 leading-tight">
-            <span className="block">Precision.</span>
-            <span className="block text-finprem-teal">Insight.</span>
-            <span className="block">Integrity.</span>
+            {/* Precision - Laser Reveal */}
+            <span className="block relative">
+              <span 
+                className={`inline-block transition-all duration-1000 ${
+                  showPrecision ? 'animate-laser-reveal' : 'opacity-0'
+                }`}
+              >
+                Precision.
+              </span>
+              {showPrecision && (
+                <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+                  <div className="laser-line"></div>
+                </div>
+              )}
+            </span>
+            
+            {/* Insight - Light Burst Reveal */}
+            <span className="block relative">
+              <span 
+                className={`inline-block text-finprem-teal transition-all duration-800 ${
+                  showInsight ? 'animate-light-burst' : 'opacity-0'
+                }`}
+              >
+                Insight.
+              </span>
+              {showInsight && (
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+                  <div className="light-burst"></div>
+                </div>
+              )}
+            </span>
+            
+            {/* Integrity - Stone Slide-In */}
+            <span className="block relative">
+              <span 
+                className={`inline-block transition-all duration-1000 ${
+                  showIntegrity ? 'animate-stone-slide' : 'opacity-0 translate-y-10'
+                } ${animationsComplete ? 'animate-final-settle' : ''}`}
+                style={{
+                  textShadow: showIntegrity ? '2px 2px 4px rgba(0,0,0,0.5)' : 'none'
+                }}
+              >
+                Integrity.
+              </span>
+            </span>
           </h1>
           
           <p className={`font-lato text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto transition-all duration-1000 delay-300 transform ${

@@ -124,6 +124,73 @@ export default {
 					'50%': {
 						transform: 'translateY(-10px)'
 					}
+				},
+				// Precision - Laser Reveal Animation
+				'laser-reveal': {
+					'0%': {
+						opacity: '0',
+						clipPath: 'inset(0 100% 0 0)'
+					},
+					'100%': {
+						opacity: '1',
+						clipPath: 'inset(0 0% 0 0)'
+					}
+				},
+				// Insight - Light Burst Animation
+				'light-burst': {
+					'0%': {
+						opacity: '0',
+						transform: 'scale(0.8) translateY(10px)',
+						filter: 'brightness(0.5)'
+					},
+					'50%': {
+						opacity: '0.8',
+						transform: 'scale(1.05) translateY(-5px)',
+						filter: 'brightness(1.3)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'scale(1) translateY(0)',
+						filter: 'brightness(1)'
+					}
+				},
+				// Integrity - Stone Slide Animation
+				'stone-slide': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(50px) scale(0.9)'
+					},
+					'70%': {
+						opacity: '0.8',
+						transform: 'translateY(-5px) scale(1.02)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0) scale(1)'
+					}
+				},
+				// Final settle animation
+				'final-settle': {
+					'0%': {
+						transform: 'translateY(0) scale(1)'
+					},
+					'50%': {
+						transform: 'translateY(-3px) scale(1.01)'
+					},
+					'100%': {
+						transform: 'translateY(0) scale(1)'
+					}
+				},
+				'page-turn': {
+					'0%': {
+						transform: 'rotateY(0deg)'
+					},
+					'50%': {
+						transform: 'rotateY(-90deg)'
+					},
+					'100%': {
+						transform: 'rotateY(-180deg)'
+					}
 				}
 			},
 			animation: {
@@ -131,7 +198,12 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out forwards',
 				'slide-in-left': 'slide-in-left 0.6s ease-out forwards',
-				'float': 'float 3s ease-in-out infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'laser-reveal': 'laser-reveal 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+				'light-burst': 'light-burst 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+				'stone-slide': 'stone-slide 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards',
+				'final-settle': 'final-settle 0.5s ease-out forwards',
+				'page-turn': 'page-turn 0.6s ease-in-out forwards'
 			}
 		}
 	},
