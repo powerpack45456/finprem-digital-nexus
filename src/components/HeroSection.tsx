@@ -1,7 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
-import { Book } from 'lucide-react';
+import './LedgerBook.css';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -74,11 +74,25 @@ const HeroSection = () => {
       {/* Animated ledger book scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
         <div className="flex flex-col items-center">
-          <div className="mb-2">
-            <Book 
-              size={32} 
-              className="text-finprem-teal animate-page-turn"
-            />
+          <div className="mb-2 relative">
+            {/* Ledger Book Animation */}
+            <div className="ledger-book">
+              {/* Book Base */}
+              <div className="book-spine"></div>
+              <div className="book-back"></div>
+              
+              {/* Book Cover */}
+              <div className="book-cover">
+                <div className="book-title">LEDGER</div>
+              </div>
+              
+              {/* Pages */}
+              <div className="page page-1"></div>
+              <div className="page page-2"></div>
+              <div className="page page-3"></div>
+              <div className="page page-4"></div>
+              <div className="page page-5"></div>
+            </div>
           </div>
           <div className="text-finprem-teal text-xs font-medium">
             Scroll to explore
