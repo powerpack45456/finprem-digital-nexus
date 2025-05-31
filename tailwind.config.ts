@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -125,12 +124,18 @@ export default {
 						transform: 'translateY(-10px)'
 					}
 				},
-				'glow': {
+				'page-turn': {
 					'0%, 100%': {
-						boxShadow: '0 0 5px rgba(0, 184, 212, 0.3)'
+						transform: 'rotateY(0deg) scale(1)'
+					},
+					'25%': {
+						transform: 'rotateY(-15deg) scale(1.05)'
 					},
 					'50%': {
-						boxShadow: '0 0 20px rgba(0, 184, 212, 0.6)'
+						transform: 'rotateY(0deg) scale(1.1)'
+					},
+					'75%': {
+						transform: 'rotateY(15deg) scale(1.05)'
 					}
 				}
 			},
@@ -140,7 +145,7 @@ export default {
 				'fade-in': 'fade-in 0.6s ease-out forwards',
 				'slide-in-left': 'slide-in-left 0.6s ease-out forwards',
 				'float': 'float 3s ease-in-out infinite',
-				'glow': 'glow 2s ease-in-out infinite'
+				'page-turn': 'page-turn 4s ease-in-out infinite'
 			}
 		}
 	},
