@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -125,17 +126,41 @@ export default {
 					}
 				},
 				'page-turn': {
-					'0%, 100%': {
-						transform: 'rotateY(0deg) scale(1)'
+					'0%': {
+						transform: 'rotateY(0deg) scale(1)',
+						opacity: '1'
+					},
+					'10%': {
+						transform: 'rotateY(-10deg) scale(1.02)',
+						opacity: '0.9'
 					},
 					'25%': {
-						transform: 'rotateY(-15deg) scale(1.05)'
+						transform: 'rotateY(-25deg) scale(1.05)',
+						opacity: '0.8'
+					},
+					'40%': {
+						transform: 'rotateY(-15deg) scale(1.03)',
+						opacity: '0.85'
 					},
 					'50%': {
-						transform: 'rotateY(0deg) scale(1.1)'
+						transform: 'rotateY(0deg) scale(1)',
+						opacity: '1'
+					},
+					'60%': {
+						transform: 'rotateY(15deg) scale(1.03)',
+						opacity: '0.85'
 					},
 					'75%': {
-						transform: 'rotateY(15deg) scale(1.05)'
+						transform: 'rotateY(25deg) scale(1.05)',
+						opacity: '0.8'
+					},
+					'90%': {
+						transform: 'rotateY(10deg) scale(1.02)',
+						opacity: '0.9'
+					},
+					'100%': {
+						transform: 'rotateY(0deg) scale(1)',
+						opacity: '1'
 					}
 				}
 			},

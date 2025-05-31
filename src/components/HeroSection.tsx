@@ -56,7 +56,7 @@ const HeroSection = () => {
           }`}>
             <Button 
               onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-finprem-teal to-blue-500 hover:from-finprem-teal hover:to-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-pulse"
+              className="bg-gradient-to-r from-finprem-teal to-blue-500 hover:from-finprem-teal hover:to-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Book a Consultation
             </Button>
@@ -74,16 +74,13 @@ const HeroSection = () => {
       {/* Animated ledger book scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
         <div className="flex flex-col items-center">
-          <div className="mb-2 animate-bounce">
+          <div className="mb-2">
             <Book 
               size={32} 
-              className="text-finprem-teal animate-pulse"
-              style={{
-                animation: 'bounce 2s infinite, page-turn 3s infinite'
-              }}
+              className="text-finprem-teal animate-page-turn"
             />
           </div>
-          <div className="text-finprem-teal text-xs font-medium animate-pulse">
+          <div className="text-finprem-teal text-xs font-medium">
             Scroll to explore
           </div>
         </div>
