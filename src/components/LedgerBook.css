@@ -44,7 +44,7 @@
   border-radius: 0 3px 3px 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.4);
   transform-origin: left center;
-  z-index: 10;
+  z-index: 4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,11 +105,11 @@
   );
 }
 
-.page-1 { z-index: 9; }
-.page-2 { z-index: 8; }
-.page-3 { z-index: 7; }
-.page-4 { z-index: 6; }
-.page-5 { z-index: 5; }
+.page-1 { z-index: 15; }
+.page-2 { z-index: 14; }
+.page-3 { z-index: 13; }
+.page-4 { z-index: 12; }
+.page-5 { z-index: 11; }
 
 @keyframes ledger-animation {
   0% {
@@ -153,16 +153,27 @@
   }
 }
 
-/* Book cover opening animation */
+/* Book cover opening animation with z-index changes */
 @keyframes cover-open {
   0%, 20% {
     transform: rotateY(0deg);
+    z-index: 10;
   }
-  25%, 85% {
+  25% {
     transform: rotateY(-120deg);
+    z-index: 3;
   }
-  90%, 100% {
+  85% {
+    transform: rotateY(-120deg);
+    z-index: 3;
+  }
+  90% {
     transform: rotateY(0deg);
+    z-index: 10;
+  }
+  100% {
+    transform: rotateY(0deg);
+    z-index: 10;
   }
 }
 
